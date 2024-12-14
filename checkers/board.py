@@ -50,7 +50,7 @@ class Board:
                 if piece != 0:
                     piece.draw(win)
 
-    def get_vaild_moves(self, piece):
+    def get_valid_moves(self, piece):
         moves = {}
         left = piece.col - 1
         right = piece.col + 1
@@ -89,7 +89,7 @@ class Board:
 
                     moves.update(self._traverse_left(r + step, row, step, color, left - 1, skipped = last))    
                     moves.update(self._traverse_right(r + step, row, step, color, left + 1, skipped = last))    
-                    break
+                break
             elif current.color == color:
                 break
             else:
@@ -122,7 +122,7 @@ class Board:
 
                     moves.update(self._traverse_left(r + step, row, step, color, right - 1, skipped = last))    
                     moves.update(self._traverse_right(r + step, row, step, color, right + 1, skipped = last))    
-                    break
+                break
             elif current.color == color:
                 break
             else:
